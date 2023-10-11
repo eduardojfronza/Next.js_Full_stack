@@ -1,22 +1,12 @@
 export {default}  from '@src/pages/Home/Home'
+import { withTeamplateConfig } from '@src/services/teamplates/withTeamplateConfig'
 
-// import Box from "@src/components/Box";
-// import Theme from "@src/theme/theme";
+export async function getStaticProps() {
+  return{
+    props: await withTeamplateConfig({
+      exemplo: 'teste',
+    })
+  }
+}
 
-// export default function Home() {
-//   return(
-//     <Box 
-//     tag='main'
-//     styleSheet={{
-//     fontFamily: Theme.typography.fontFamily,
-//     backgroundColor: {
-//       xs: 'red',
-//       sm: 'yellow',
-//       md: 'blue'
-//     }
-//   }}
-//       >
-//       oi
-//     </Box>
-//   )
-// }
+ 

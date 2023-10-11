@@ -4,12 +4,12 @@ import Feed from "@src/components/pages/Home/Feed";
 import Footer from "@src/components/pages/Home/Footer";
 import Header from "@src/components/pages/Home/Header";
 import Menu from "@src/components/pages/Home/Menu";
-import Posts from "@src/components/pages/Home/Posts";
-import Text from "@src/components/Texts";
+import teamplatePageHOC from "@src/services/teamplates/teamplatePageHOC";
 import { useTheme } from "@src/theme/ThemeProvider";
 
-export default function Home() {
+function Home(props) {
   const theme = useTheme();
+
   return(
     <>
       <Box
@@ -30,3 +30,7 @@ export default function Home() {
     </>
   )    
 }
+
+export default teamplatePageHOC(Home, {
+  title: 'Home',
+})

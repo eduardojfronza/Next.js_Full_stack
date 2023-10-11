@@ -1,0 +1,9 @@
+site: 
+  title: "Fronza - Timeline"
+  description: 'Bem vindo a minha TimeLine pessoal'
+personal: 
+  name: 'Eduardo Fronza'
+  avatar: 'https://github.com/eduardojfronza.png'
+  socialNetworks:
+    github: 'https://github.com/eduardojfronza'
+   

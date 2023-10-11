@@ -1,13 +1,15 @@
-import Icon from "@src/components/Icon/Icon";
 import Image from "@src/components/Image";
-import Links from "@src/components/Link";
 import Box from "@src/components/box/Box";
 import Text from "@src/components/Texts";
 import Button from "@src/components/Button";
 import { useTheme } from "@src/theme/ThemeProvider";
+import { useTemplateConfig } from "@src/services/teamplates/templateConfigContext";
+import Links from "@src/components/Link";
+import Icon from "@src/components/Icon/Icon";
 
 export default function Header() {
   const theme = useTheme();
+  const templateConfig = useTemplateConfig();
   return(
     <Box
       styleSheet={{
@@ -30,7 +32,7 @@ export default function Header() {
             height: { xs: '100px', md: '128px' },
             borderRadius: '100%',
           }}
-          src="https://github.com/eduardojfronza.png"
+          src={templateConfig?.personal?.avatar}
           alt="Imagem de perfil do Eduardo Fronza"
         />
 
@@ -50,9 +52,29 @@ export default function Header() {
         </Box>
       </Box>
       <Text tag="h1" variant="heading4">
-       Eduardo Fronza
+       {templateConfig?.personal?.name}
       </Text>
       
+      <Box styleSheet={{
+          flexDirection: 'row',
+          gap: '4px',
+        }}
+      >
+       {Object.keys(templateConfig.personal.socialNetworks).map(key => {
+        const socialNetwork = templateConfig.personal.socialNetworks[key];
+        if(socialNetwork) {
+          return (
+            <Links
+              target="_blank"
+              href={templateConfig.personal.socialNetworks[key]}
+            >
+              <Icon name={key as any}/>
+            </Links>
+          )
+        }
+        return null
+       })}
+      </Box>
     </Box>
   )
 }

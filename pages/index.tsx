@@ -1,9 +1,9 @@
 export {default}  from '@src/pages/Home/Home'
-import { withTeamplateConfig } from '@src/services/teamplates/withTeamplateConfig'
+import { withTemplateConfig } from '@src/services/teamplates/withTemplateConfig'
 
 export async function getStaticProps() {
   return{
-    props: await withTeamplateConfig({
+    props: await withTemplateConfig({
       exemplo: 'teste',
     })
   }

@@ -1,5 +1,6 @@
 import Head from "next/head";
-import  type { TeamplateConfig } from "./withTeamplateConfig";
+import { TemplateConfigProvider } from "./templateConfigContext";
+
 
 interface TemplatePageHOCProps {
   title?: string;
@@ -20,7 +21,9 @@ export default function teamplatePageHOC(
              : props.templateConfig.site.title }
           </title>
         </Head>
-        <Component {...props}/>
+        <TemplateConfigProvider value={props.teamplateConfig}>
+          <Component {...props}/>
+        </TemplateConfigProvider>
       </>
     )
   }

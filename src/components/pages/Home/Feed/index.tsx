@@ -1,4 +1,3 @@
-import Links from "@src/components/Link";
 import Box from "@src/components/box/Box";
 import Text from "@src/components/Texts";
 import React from "react";

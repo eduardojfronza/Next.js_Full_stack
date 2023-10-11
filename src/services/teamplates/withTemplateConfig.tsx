@@ -1,7 +1,7 @@
 import readYamlFile from "read-yaml-file/index"
 import path from "path"
 
-export interface TeamplateConfig {
+export interface TemplateConfig {
   site?: {
     title?: string;
     description?: string;
@@ -17,10 +17,10 @@ export interface TeamplateConfig {
   }
 }
 
-export async function withTeamplateConfig(props = {}) {
+export async function withTemplateConfig(props = {}) {
 
   const PATH_TEAMPLATE_CONFIG = path.resolve(".", "teamplate-config.yml");
-  const teamplateConfig = await readYamlFile<TeamplateConfig>(PATH_TEAMPLATE_CONFIG);
+  const teamplateConfig = await readYamlFile<TemplateConfig>(PATH_TEAMPLATE_CONFIG);
   
   return {
     teamplateConfig,  

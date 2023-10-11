@@ -4,7 +4,7 @@ import Feed from "@src/components/pages/Home/Feed";
 import Footer from "@src/components/pages/Home/Footer";
 import Header from "@src/components/pages/Home/Header";
 import Menu from "@src/components/pages/Home/Menu";
-import teamplatePageHOC from "@src/services/teamplates/teamplatePageHOC";
+import teamplatePageHOC from "@src/services/teamplates/templatePageHOC";
 import { useTheme } from "@src/theme/ThemeProvider";
 
 function Home(props) {

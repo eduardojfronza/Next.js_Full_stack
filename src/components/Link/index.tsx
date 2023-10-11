@@ -6,6 +6,7 @@ import { themeTypographyVariants } from "@src/theme/theme";
 import { useTheme } from "@src/theme/ThemeProvider";
 
 interface LinkProps {
+  target?: string,
   href?: string;
   children: React.ReactNode;
   styleSheet?: StyleSheet;
@@ -30,7 +31,7 @@ const Links =  React.forwardRef(({ href, children, colorVariant, styleSheet, col
   }
 
   const linkProps = {
-     tag: 'p',
+     tag: 'a',
      ref,
      children,
      href,

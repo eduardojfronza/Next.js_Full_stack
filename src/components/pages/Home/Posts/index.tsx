@@ -10,12 +10,10 @@ interface PostsProps {
 export default function Posts({ posts }:PostsProps) {
   return(
     <Box>
-      <Text variant="heading3" styleSheet={{
-        marginBottom: '27px'
-      }}> 
+      <Text variant="heading4" styleSheet={{ marginBottom: '27px' }}> 
         Últimas atualizações
       </Text>
-      {posts.map(({ content, metadata, slug, title }) =>{
+      {posts.map(({ content, metadata, slug, title, image }) =>{
         const {date, excerpt, url, tags} = metadata;
 
         return (
@@ -26,6 +24,7 @@ export default function Posts({ posts }:PostsProps) {
             excerpt={excerpt}
             tags={tags}
             url={url}
+            image={image}
           />
         )
       })}

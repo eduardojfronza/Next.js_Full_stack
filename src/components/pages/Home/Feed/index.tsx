@@ -17,7 +17,7 @@ export default function Feed({children}:FeedProps ){
         width: '100%',
         maxWidth: '683px',
         borderRadius: '8px',
-        paddingVertical: '40px',
+        paddingTop: '40px',
         paddingHorizontal: '32px',
       }}
     >

@@ -65,6 +65,7 @@ export default function Header() {
         if(socialNetwork) {
           return (
             <Links
+              key={key}
               target="_blank"
               href={templateConfig.personal.socialNetworks[key]}
             >
